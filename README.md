@@ -1,18 +1,20 @@
-## Getting Started
+# Algoritmo Genético - Maximização de Função (Java)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este repositório contém a implementação de um Algoritmo Genético (AG) binário desenvolvido do zero em Java.
 
-## Folder Structure
+O objetivo do projeto é demonstrar a aplicação prática da computação evolutiva para encontrar o máximo global de uma função matemática real, especificamente f(x,y) = |e^(-x) - y^2 + 1| + 10^(-4), no intervalo de [-10, 10] com precisão de 0.005. O trabalho foi construído sem o uso de bibliotecas prontas de otimização, atendendo aos requisitos da disciplina de Inteligência Artificial da UFERSA.
 
-The workspace contains two folders by default, where:
+Nesta versão, foram implementados recursos como a codificação binária em cromossomos de 24 bits, seleção por torneio, crossover de ponto único e mutação bit a bit. Além disso, a arquitetura conta com elitismo para garantir a preservação do melhor indivíduo a cada geração, otimizando a convergência para o resultado final.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Como Executar
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Compile os arquivos do pacote e execute a classe principal `App`:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+```bash
+javac model/*.java operadores/*.java core/*.java App.java
+java App
+```
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Autores
+* Plácido da Silva França
+* Gabriel Felipe Pereira Dantas
