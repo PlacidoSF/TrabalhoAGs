@@ -16,7 +16,6 @@ public class Mutacao {
             }
         }
 
-        // Se houve mutação, cria um novo indivíduo. Se não, retorna o mesmo.
         if (mutou) {
             return new Individuo(new String(bits));
         }

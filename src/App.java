@@ -8,28 +8,25 @@ public class App {
         System.out.println("f(x, y) = |e^(-x) - y^2 + 1| + 10^-4");
         System.out.println("==================================================");
 
-        // Parâmetros do Algoritmo Genético
+        
         int tamanhoPopulacao = 100;
         int geracoes = 500;
-        double taxaCrossover = 0.8;
-        double taxaMutacao = 0.01;
+        double taxaMutacao = 0.05;
         int kTorneio = 3;
 
         System.out.println("\nExecutando AG com os parâmetros:");
         System.out.println(" - tamanho_populacao: " + tamanhoPopulacao);
         System.out.println(" - geracoes: " + geracoes);
-        System.out.println(" - taxa_crossover: " + taxaCrossover);
         System.out.println(" - taxa_mutacao: " + taxaMutacao);
         System.out.println(" - k_torneio: " + kTorneio);
 
-        // Instancia e executa o algoritmo
+        
         AlgoritmoGenetico ag = new AlgoritmoGenetico(
-                tamanhoPopulacao, geracoes, taxaCrossover, taxaMutacao, kTorneio
+                tamanhoPopulacao, geracoes, taxaMutacao, kTorneio
         );
 
         Individuo resultado = ag.executar();
 
-        // Impressão dos resultados
         System.out.println("\n==================================================");
         System.out.println("RESULTADO FINAL");
         System.out.println("==================================================");
