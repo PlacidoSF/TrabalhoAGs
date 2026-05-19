@@ -3,7 +3,6 @@ package model;
 import java.util.Random;
 
 public class Individuo {
-    // Parâmetros da codificação binária
     private static final int BITS_POR_VARIAVEL = 12;
     private static final double INTERVALO_MIN = -10.0;
     private static final double INTERVALO_MAX = 10.0;

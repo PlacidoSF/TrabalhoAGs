@@ -3,37 +3,34 @@ import model.Individuo;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("==================================================");
-        System.out.println("Algoritmo Genético - Maximização de f(x, y)");
-        System.out.println("f(x, y) = |e^(-x) - y^2 + 1| + 10^-4");
-        System.out.println("==================================================");
-
-        
-        int tamanhoPopulacao = 100;
-        int geracoes = 500;
+    
+        int tamanhoPopulacao = 120;
+        int geracoes = 400;
         double taxaMutacao = 0.05;
-        int kTorneio = 3;
+        int kTorneio = 4;
 
-        System.out.println("\nExecutando AG com os parâmetros:");
-        System.out.println(" - tamanho_populacao: " + tamanhoPopulacao);
-        System.out.println(" - geracoes: " + geracoes);
-        System.out.println(" - taxa_mutacao: " + taxaMutacao);
-        System.out.println(" - k_torneio: " + kTorneio);
-
+        System.out.println("\n---[ Otimização via Algoritmo Genético ]---");
+        System.out.println("Função Alvo: f(x, y) = |e^(-x) - y^2 + 1| + 10^-4\n");
         
+        System.out.println("[ Parâmetros de Configuração ]");
+        System.out.printf(" > População    : %d indivíduos\n", tamanhoPopulacao);
+        System.out.printf(" > Gerações     : %d\n", geracoes);
+        System.out.printf(" > Taxa Mutação : %.2f\n", taxaMutacao);
+        System.out.printf(" > Torneio (k)  : %d\n", kTorneio);
+        
+        System.out.println("\nProcessando evolução...");
+
         AlgoritmoGenetico ag = new AlgoritmoGenetico(
                 tamanhoPopulacao, geracoes, taxaMutacao, kTorneio
         );
 
         Individuo resultado = ag.executar();
 
-        System.out.println("\n==================================================");
-        System.out.println("RESULTADO FINAL");
-        System.out.println("==================================================");
-        System.out.printf("Melhor x: %.6f\n", resultado.getX());
-        System.out.printf("Melhor y: %.6f\n", resultado.getY());
-        System.out.printf("Valor máximo f(x, y): %.6f\n", resultado.getFitness());
-        System.out.println("Cromossomo (binário): " + resultado.getCromossomo());
-        System.out.println("==================================================");
+        System.out.println("\n[ >>> Solução Global Encontrada <<< ]");
+        System.out.printf(" * Coordenada X : %.6f\n", resultado.getX());
+        System.out.printf(" * Coordenada Y : %.6f\n", resultado.getY());
+        System.out.printf(" * Aptidão (Max): %.6f\n", resultado.getFitness());
+        System.out.println("\nDNA (Cromossomo): " + resultado.getCromossomo());
+        System.out.println("-------------------------------------------\n");
     }
 }
